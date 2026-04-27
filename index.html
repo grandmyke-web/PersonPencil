@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PersonPencil</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+}
+
+/* NAV */
+nav{
+  background:#020617;
+  padding:15px;
+  text-align:center;
+}
+nav a{
+  color:white;
+  margin:0 20px;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* PÁGINAS */
+.page{
+  display:none;
+  padding:60px 20px;
+}
+.active{
+  display:block;
+}
+
+/* INICIO */
+.inicio{
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0');
+  background-size:cover;
+  color:white;
+  text-align:center;
+}
+
+.inicio h1{
+  font-size:55px;
+}
+
+.box{
+  background:rgba(0,0,0,0.5);
+  padding:30px;
+  border-radius:15px;
+  max-width:700px;
+  margin:auto;
+}
+
+/* PRODUCTOS */
+.productos{
+  background:#f1f5f9;
+}
+
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  width:260px;
+  border-radius:20px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+}
+
+.card img{
+  width:100px;
+}
+
+/* CONTACTO */
+.contacto{
+  text-align:center;
+  margin-top:60px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+}
+/* BOTÓN DENTRO DE DIV */
+.contacto a{
+  display:inline-block;
+  padding:12px 25px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  transition:all 0.3s ease;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* HOVER */
+.contacto a:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* EFECTO PULSO */
+@keyframes pulse{
+  0%{
+    box-shadow:0 0 0 0 rgba(37,211,102,0.6);
+  }
+  70%{
+    box-shadow:0 0 0 15px rgba(37,211,102,0);
+  }
+  100%{
+    box-shadow:0 0 0 0 rgba(37,211,102,0);
+  }
+}
+
+.contacto a{
+  animation:pulse 2s infinite;
+}
+/* FOOTER */
+footer{
+  background:#020617;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+/* 🔥 ANIMACIÓN PARA INICIO Y PRODUCTOS */
+nav a{
+  position:relative;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#38bdf8;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0%;
+  height:2px;
+  background:#38bdf8;
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- MENÚ -->
+<nav>
+  <a onclick="showPage('inicio')">Inicio</a>
+  <a onclick="showPage('productos')">Productos</a>
+</nav>
+
+<!-- INICIO -->
+<div id="inicio" class="page active inicio">
+
+  <h1>✏️ PersonPencil</h1>
+
+  <div class="box">
+    <h2>¿Qué hacemos?</h2>
+
+    <p>
+      Actualmente, muchos estudiantes buscan ideas para realizar proyectos escolares que no necesiten bastante dinero pero que al mismo tiempo puedan generar ganancia. Por esto, en este proyecto se presenta la idea de crear y vender lápices personalizados, un producto sencillo pero llamativo que puede ser útil para los estudiantes dentro del colegio.
+    
+    </p>
+
+    <p>
+      Los lápices son uno de los materiales escolares más utilizados, ya que se emplean para escribir, dibujar y realizar diferentes actividades escolares. Sin embargo, la mayoría de lápices son simples y no tienen algun tipo de diseño especial. Por esto surgió la idea de decorar lápices para hacerlos más atractivos y diferentes.
+    </p>
+
+    <p>
+      Este proyecto escolar busca demostrar que con creatividad y algunos materiales es posible transformar un objeto de uso diario en un producto más interesante. Además, este trabajo permite aprender sobre la importancia de planear un proyecto, calcular los costos de los materiales, organizar el proceso de elaboración y pensar en la posible ganancia al vender el producto.
+    </p>
+  </div>
+
+</div>
+
+<!-- PRODUCTOS + CONTACTO -->
+<div id="productos" class="page productos">
+
+  <h2 style="text-align:center;">Nuestros Productos</h2>
+
+  <div class="cards">
+
+    <div class="card">
+    
+      <h3>Básico</h3>
+      <p>Diseños del catalogo</p>
+      <b>$2.500</b>
+    </div>
+
+    <div class="card">
+      
+      <h3>Premium</h3>
+      <p>Diseños personalizados</p>
+      <b>$5.000</b>
+    </div>
+
+
+  </div>
+
+  <!-- CONTACTO -->
+  <div class="contacto">
+    <h2>Contacto</h2>
+    <p>Haz tu pedido por Whatsapp</p>
+
+    <a class="btn" href="https://wa.me/573114862432" target="_blank">
+       Escribenos 
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 PersonPencil - Proyecto emprendimiento</p>
+</footer>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
